@@ -4,14 +4,16 @@ import { ThemeContext } from '../contexts/ThemeContext';
 class BookList extends Component {
   static contextType = ThemeContext;
   render() {
-    const {isLightTheme, light, dark } = this.context;
+    const { isLightTheme, light, dark } = this.context;
     const theme = isLightTheme ? light : dark;
+    const books = ["the way of kings", "the way of life", "the final empire"];
+
     return (
-      <div className="book-list" style = {{cololr: theme.syntax, background: theme.bg}}>
-        <ul>
-          <li style={{background: theme.ui}}>the way of kings</li>
-          <li style={{background: theme.ui}}>the way of life</li>
-          <li style={{background: theme.ui}}>the final empire</li>
+      <div className="book-list" style={{ color: theme.syntax, background: theme.bg }}>
+        <ul style={{ background: theme.ui }}>
+          {books.map((book, index) => (
+            <li key={index}>{book}</li>
+          ))}
         </ul>
       </div>
     );
