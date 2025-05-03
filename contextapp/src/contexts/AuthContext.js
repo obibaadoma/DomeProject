@@ -18,4 +18,4 @@ class AuthContextProvider extends Component {
   }
 }
  
-export default AuthContextProvider;
+export default  AuthContextProvider;

@@ -16,7 +16,8 @@ body {
 
 /* Theme styles */
 .light {
-  color: #555; /* syntax in light theme */
+ 
+   color: #555; /* syntax in light theme */
 }
 
 .dark {
@@ -25,9 +26,6 @@ body {
 
 /* Navbar styles */
 .navbar {
-  padding: 10px 20px;
-  margin: 20px;
-  border-radius: 8px;
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: center;
