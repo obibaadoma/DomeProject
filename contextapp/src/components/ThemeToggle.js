@@ -1,14 +1,11 @@
 import React, { useContext } from 'react';
-import { ThemeContext } from '../contexts/themeContext';
+import { ThemeContext } from '../contexts/ThemeContext';
 
 const ThemeToggle = () => {
-  const { toggleTheme, isLightTheme } = useContext(ThemeContext);
-  
+  const { toggleTheme } = useContext(ThemeContext);
   return (
-    <button onClick={toggleTheme} className="theme-toggle-btn">
-      {isLightTheme ? 'Switch to Dark Mode' : 'Switch to Light Mode'}
-    </button>
-  );
-};
-
+      <button onClick={toggleTheme}>Toggle the theme</button>
+    );
+}
+ 
 export default ThemeToggle;

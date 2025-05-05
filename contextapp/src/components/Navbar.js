@@ -1,24 +1,23 @@
 import React, { useContext } from 'react';
-import { ThemeContext } from '../contexts/themeContext';
+import { ThemeContext } from '../contexts/ThemeContext';
 import { AuthContext } from '../contexts/AuthContext';
 
 const Navbar = () => {
-  const { isLightTheme } = useContext(ThemeContext);
+  const { isLightTheme, light, dark } = useContext(ThemeContext);
   const { isAuthenticated, toggleAuth } = useContext(AuthContext);
+  const theme = isLightTheme ? light : dark;
   
   return (
-    <nav className={`navbar ${isLightTheme ? 'light' : 'dark'}`}>
-      <div className="title-container">
+    <nav style= {{background: theme.ui, color:theme.syntax }}>
         <h1>Context App</h1>
-      </div>
-      <div className="nav-buttons">
-        <button 
-          onClick={toggleAuth} 
-          className="auth-btn"
-        >
-          {isAuthenticated ? 'Log Out' : 'Log In'}
-        </button>
-      </div>
+        <div onClick={toggleAuth} >
+          {isAuthenticated ? 'Logged in' : 'Logged out'}
+        </div>
+        <ul>
+          <li>Home</li>
+          <li>About</li>
+          <li>Contact</li>
+        </ul>
     </nav>
   );
 };
